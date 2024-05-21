@@ -20,6 +20,13 @@ const Navbar = () => {
   const [open, setOpen] = useState(false);
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const drawerRef = useRef(null);
+  const link = [
+    "https://justjeans.jgl.com.au/",
+    "https://portmans.jgl.com.au/",
+    "https://dotti.jgl.com.au/",
+    "https://jayjays.jgl.com.au/",
+  "https://jacquie.jgl.com.au/"
+  ]
 // console.log(brands.catalogGroupView)
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -82,8 +89,8 @@ const Navbar = () => {
             onMouseLeave={() => document.getElementById('brands_dropdown').style.display = 'none'}
           >
             <ul>
-              {brands.catalogGroupView?.map((brand) => (
-                <li key={brand.uniqueID} ><a target="_blank" rel="noopener noreferrer" href={brand.uniqueID} ><b>{brand.name}</b></a></li>
+              {brands.catalogGroupView?.map((brand,i) => (
+                <li key={brand.uniqueID} ><a target="_blank" rel="noopener noreferrer" href={link[i]} ><b>{brand.name}</b></a></li>
               ))}
             
             </ul>

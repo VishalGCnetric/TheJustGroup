@@ -54,7 +54,13 @@ const SliderComponent = () => {
       </ArrowDiv>
     );
   };
-
+  const link = [
+    "https://portmans.jgl.com.au/",
+    "https://jayjays.jgl.com.au/",
+    "https://jacquie.jgl.com.au/",
+    "https://justjeans.jgl.com.au/",
+    "https://dotti.jgl.com.au/",
+  ]
   const PrevArrow = (props) => {
     const { className, style, onClick } = props;
     return (
@@ -96,10 +102,10 @@ const SliderComponent = () => {
       {data.length > 0 && ( // Check if data has items before rendering the slider
         <StyledSlider {...settings}>
          {data.map((item, index) => {
-  const link = ids.find(link => link.name === item.title);
+  // const link = ids.find(link => link.name === item.title);
   return (
     <div key={index}>
-      <a href={link ? link.uniqueID : "#"} target="_blank" rel="noopener noreferrer">
+      <a href={link[index]} target="_blank" rel="noopener noreferrer">
         <img src={item.url} alt={item.title} />
       </a>
     </div>

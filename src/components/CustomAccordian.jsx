@@ -76,7 +76,13 @@ const CustomAccordion = () => {
     const toggleNestedAccordion = (nestedIndex) => {
         setOpenNestedIndex(openNestedIndex === nestedIndex ? null : nestedIndex);
     };
-
+    const link = [
+        "https://justjeans.jgl.com.au/",
+        "https://portmans.jgl.com.au/",
+        "https://dotti.jgl.com.au/",
+        "https://jayjays.jgl.com.au/",
+      "https://jacquie.jgl.com.au/"
+      ]
     return (
         <div style={{ height: '100%', width: "100%" }}>
             <AccordionWrapper>
@@ -125,8 +131,8 @@ const CustomAccordion = () => {
                     </AccordionButton>
                     <AccordionContent isOpen={openIndex === 1}>
                         <NestedAccordionContent>
-                            {brands.catalogGroupView?.map((brand) => (
-                                <NestedLink a target="_blank" rel="noopener noreferrer" href={brand.uniqueID}>{brand.name}</NestedLink>
+                            {brands.catalogGroupView?.map((brand,i) => (
+                                <NestedLink a target="_blank" rel="noopener noreferrer" href={link[i]}>{brand.name}</NestedLink>
                             ))}
 
                         </NestedAccordionContent>

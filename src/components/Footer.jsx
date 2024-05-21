@@ -7,7 +7,13 @@ import MoreBrand from './MoreBrand';
 
 const Footer = () => {
   const {brands} = useContext(BrandContext);
-
+const link = [
+  "https://justjeans.jgl.com.au/",
+  "https://portmans.jgl.com.au/",
+  "https://dotti.jgl.com.au/",
+  "https://jayjays.jgl.com.au/",
+"https://jacquie.jgl.com.au/"
+]
   return (
     <FooterDiv>
       <div className="logo">
@@ -42,8 +48,8 @@ const Footer = () => {
           <ul>
             <li className="headingList"><a href="#">OUR BRAND</a></li>
             <ul>
-              {brands.catalogGroupView?.map((brand) => (
-                <li key={brand.uniqueID}><a href={brand.uniqueID}>{brand.name}</a></li>
+              {brands.catalogGroupView?.map((brand,i) => (
+                <li key={brand.uniqueID}><a target="_blank" rel="noopener noreferrer" href={link[i]}>{brand.name}</a></li>
               ))}
               {/* <li><a href="#">JUST JEANS</a></li>
               <li><a href="#">PORTMANS</a></li>
