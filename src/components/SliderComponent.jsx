@@ -6,6 +6,7 @@ import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { BrandContext } from '../contextApi/BrandContextProvider';
+import { API_BASE_URL } from '../Api/api';
 
 const SliderComponent = () => {
   const { brands } = useContext(BrandContext);
@@ -15,7 +16,7 @@ const SliderComponent = () => {
 // console.log(link)
   const fetchData = async () => {
     try {
-      const res = await axios.get("http://49.206.253.146:2109/content/justGroup");
+      const res = await axios.get(`${API_BASE_URL}/content/justGroup`);
       const apiData = res.data;
 
 

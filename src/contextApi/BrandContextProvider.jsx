@@ -8,7 +8,7 @@ const BrandContextProvider = ({children}) => {
   useEffect(()=>{
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://49.206.253.146:2109/categories');
+        const response = await axios.get(`${API_BASE_URL}/categories` );
         setBrands(response.data); // console.log(response.data)
       } catch (error) {
         console.error('Error fetching data:', error);
